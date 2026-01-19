@@ -1,0 +1,70 @@
+.wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1000px;
+  overflow: hidden;
+  background: #f0f2f5;
+}
+
+.inner {
+  /* -------- MOBILE (< 768px) -------- */
+  --w: 200px;
+  --h: 150px;
+  --translateZ: 150px;
+  --rotateX: -8deg;
+
+  position: relative;
+  width: var(--w);
+  height: var(--h);
+
+  transform-style: preserve-3d;
+  animation: rotating 25s linear infinite;
+}
+
+@keyframes rotating {
+  from {
+    transform: rotateX(var(--rotateX)) rotateY(0deg);
+  }
+  to {
+    transform: rotateX(var(--rotateX)) rotateY(360deg);
+  }
+}
+
+.card {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: var(--w);
+  height: var(--h);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transform: rotateY(calc((360deg / var(--quantity)) * var(--index)))
+    translateZ(var(--translateZ));
+
+  transition: transform 0.4s ease;
+}
+
+.inner:hover {
+  animation-play-state: paused;
+}
+
+.card:hover {
+  transform: rotateY(calc((360deg / var(--quantity)) * var(--index)))
+    translateZ(calc(var(--translateZ) + 15px))
+    scale(1.05);
+  z-index: 10;
+}
+
+/* -------- TABLET & DESKTOP (≥ 768px) -------- */
+@media (min-width: 768px) {
+  .inner {
+    --translateZ: 240px;
+  }
+}
