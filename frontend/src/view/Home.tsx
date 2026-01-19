@@ -3,15 +3,7 @@ import IconCard from "../components/cards/IconCard"
 import {
   faGithub,
   faLinkedin,
-  faTwitter,
 } from "@fortawesome/free-brands-svg-icons"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import {
-  faArrowDown,
-  faStar,
-  faCode,
-  faEnvelope,
-} from "@fortawesome/free-solid-svg-icons"
 
 const Home: React.FC = () => {
   return (

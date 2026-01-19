@@ -2,7 +2,6 @@ import { faReact } from "@fortawesome/free-brands-svg-icons"
 import { useState } from "react"
 import ProjectCard from "../components/cards/ProjectCard"
 import InformativePopUp from "../components/popUp/InformativePopUp"
-import QuestionMarkInformation from "../components/ui/tooltip/QuestionMarkInformation"
 import {
   faRocket,
   faCode,
